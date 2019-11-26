@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge 4</title>
+    <style>
+
+    .errormsg {
+    	color:red;
+    	display:none; }
+    </style>
+		<script type="text/javascript"   src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- <script>
+		ch4form.onsubmit = function() {
+		    var validInput = true;
+		    var name = document.querySelector("#fullname")
+		    var address = document.querySelector("#streetaddr")
+
+		    if (name.value.length == 0){
+		        document.querySelector("#nameerrormsg").style.display = "block";
+		        validInput = false;
+		    }
+			}
+    </script> -->
+		<script>
+			$(document).ready(function(){
+				// console.log('ready')
+
+			// var validInput = false;
+			$('#ch4form').submit(function(event) {
+				// console.log('submit')
+
+
+			var name = $('#fullname').val();
+			var address = $('#streetaddr').val();
+			//trying to see if there is input in the fullname TextArea
+			//what syntax shows that? Is it :checked');
+
+			if (name.length == 0){
+				console.log(name);
+				$('#nameerrormsg').show();
+				event.preventDefault();
+				// validInput = false;
+			}
+
+			else{
+				$('#nameerrormsg').hide();
+			}
+
+			if (address.length == 0) {
+				console.log('test')
+				$('#addrerrormsg').show();
+				event.preventDefault();
+				// validInput = false;
+			}
+			else{
+				$('#addrerrormsg').hide();
+				// event.preventDefault();
+
+			}
+
+			// event.preventDefault();
+
+		})
+	})
+
+    </script>
+</head>
+<body>
+    <h1>Challenge 4</h1>
+	<form action="challenge5.html" id = "ch4form">
+        <fieldset>
+        <legend>Personal details</legend>
+          <label for="fullname">Full name: </label>
+            <input type="text" name="fullname" id="fullname"><br/>
+
+            <p class="errormsg" id="nameerrormsg">Please enter your name above!</p>
+
+          <label for ="streetaddr"></label>
+            Street Address:
+            <input type="text" name="streetaddr" id="streetaddr">
+
+            <p class="errormsg" id="addrerrormsg">Please enter your street address!</p>
+        </fieldset>
+        <input type="submit" value="Submit it!">
+    </form>
+    <!-- <script src = "js/challenge4.js"></script> -->
+
+</body>
+</html>

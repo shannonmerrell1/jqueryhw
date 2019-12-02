@@ -34,8 +34,10 @@ Add an if-else statement to your setHomeAddress() function so that when the chec
 				$("#home").val(billing).prop("readonly", true);
 
 				if(this.checked == false) {
-					$("#home").val("")
+					$("#home").val("").prop("readonly", false);
 				}
+
+
 
 				//* if(this.check == false) {
 				// $("#home").val -- make it empty somehow -- clear it

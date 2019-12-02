@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Challenge 5</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<script>
 
@@ -29,8 +29,13 @@
 
 		$(imgs[i]).focus(function(){
 			var picturename= $(this).attr('src');
-			$('#image').css("background-image"), "url('" + picturename +"')";
+			$('#image').css("background-image", "url('" + picturename +"')");
 		})
+
+		//Trying to get the purple picture to show the picture that the tab button is on
+		//Currently my code takes the image imgs[i] that is in .focus
+		//takes the attribute src and makes the image of the html the background images
+		//then it makes the url the picturename
 
 		$(imgs[i]).blur(function() {
 			$("#image").css('background-image', 'none');
